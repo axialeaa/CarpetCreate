@@ -1,31 +1,43 @@
 {
-  "schemaVersion": 1,
-  "id": "carpetcreate",
-  "version": "${version}",
-  "name": "CarpetCreate",
-  "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "axialeaa"
   ],
   "contact": {
-    "sources": "https://github.com/axialeaa/CarpetCreate"
+    "homepage": "https://modrinth.com/mod/carpet-create",
+    "sources": "https://github.com/axialeaa/CarpetCreate",
+    "issues": "https://github.com/axialeaa/CarpetCreate/issues"
   },
-  "license": "CC0",
-  "icon": "assets/carpetcreate/icon.png",
-  "environment": "*",
+  "custom": {
+    "modmenu": {
+      "parent": {
+        "id": "carpet"
+      },
+      "links": {
+        "modmenu.github_releases": "https://github.com/axialeaa/CarpetCreate/releases",
+        "modmenu.modrinth": "https://modrinth.com/mod/carpet-create"
+      }
+    }
+  },
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "create": "${create_version}",
+    "carpet": "${carpet_version}",
+    "minecraft": "${minecraft_version}"
+  },
+  "description": "Integrates Gnembon's Carpet mod seamlessly into Create, for a clockwork technical experience!",
   "entrypoints": {
     "main": [
       "com.axialeaa.carpetcreate.CarpetCreateServer"
     ]
   },
+  "environment": "*",
+  "icon": "assets/carpetcreate/icon.png",
+  "id": "carpetcreate",
+  "license": "LGPLv3",
   "mixins": [
     "carpetcreate.mixins.json"
   ],
-  "depends": {
-    "fabricloader": ">=${fabric_loader_version}",
-    "fabric-api": ">=${fabric_api_version}",
-    "create": "${create_version}",
-    "carpet": "*",
-    "minecraft": "${minecraft_version}"
-  }
+  "name": "CarpetCreate",
+  "schemaVersion": 1,
+  "version": "${version}"
 }

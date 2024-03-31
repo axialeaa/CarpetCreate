@@ -1,24 +1,22 @@
 package com.axialeaa.carpetcreate;
 
-import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.axialeaa.carpetcreate.command.FluidCounterCommand;
-import com.mojang.brigadier.CommandDispatcher;
-import com.simibubi.create.Create;
-
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.utils.Translations;
+import com.axialeaa.carpetcreate.command.FluidCounterCommand;
+import com.mojang.brigadier.CommandDispatcher;
+import com.simibubi.create.Create;
 import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Map;
 
 public class CarpetCreateServer implements ModInitializer, CarpetExtension {
-	public static final String MOD_ID = "carpetcreate";
+	public static final String MOD_ID = "carpet-create";
 	public static final String MOD_NAME = "CarpetCreate";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 

@@ -24,18 +24,18 @@
     "carpet": "${carpet_version}",
     "minecraft": "${minecraft_version}"
   },
-  "description": "Integrates Gnembon's Carpet mod seamlessly into Create, for a clockwork technical experience!",
+  "description": "Integrates Gnembon's Carpet mod seamlessly into Create for a clockwork technical experience!",
   "entrypoints": {
     "main": [
       "com.axialeaa.carpetcreate.CarpetCreateServer"
     ]
   },
   "environment": "*",
-  "icon": "assets/carpetcreate/icon.png",
+  "icon": "assets/carpet-create/icon.png",
   "id": "carpetcreate",
   "license": "LGPLv3",
   "mixins": [
-    "carpetcreate.mixins.json"
+    "carpet-create.mixins.json"
   ],
   "name": "CarpetCreate",
   "schemaVersion": 1,

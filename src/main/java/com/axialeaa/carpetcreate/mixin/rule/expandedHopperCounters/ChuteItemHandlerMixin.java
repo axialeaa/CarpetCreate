@@ -1,21 +1,12 @@
 package com.axialeaa.carpetcreate.mixin.rule.expandedHopperCounters;
 
-import java.util.Objects;
-
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
+import carpet.CarpetSettings;
+import carpet.helpers.HopperCounter;
+import carpet.utils.WoolTool;
 import com.axialeaa.carpetcreate.CarpetCreateSettings;
 import com.simibubi.create.content.logistics.chute.AbstractChuteBlock;
 import com.simibubi.create.content.logistics.chute.ChuteBlockEntity;
 import com.simibubi.create.content.logistics.chute.ChuteItemHandler;
-
-import carpet.CarpetSettings;
-import carpet.helpers.HopperCounter;
-import carpet.utils.WoolTool;
 import net.fabricmc.fabric.api.transfer.v1.item.ItemVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
 import net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext;
@@ -24,6 +15,13 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Objects;
 
 @SuppressWarnings("UnstableApiUsage")
 @Mixin(ChuteItemHandler.class)
@@ -31,7 +29,7 @@ public abstract class ChuteItemHandlerMixin extends SingleVariantStorage<ItemVar
 
 	@Shadow private ChuteBlockEntity blockEntity;
 
-	@Inject(method = "insert(Lnet/fabricmc/fabric/api/transfer/v1/item/ItemVariant;JLnet/fabricmc/fabric/api/transfer/v1/transaction/TransactionContext;)J", at = @At("HEAD"), remap = false, cancellable = true)
+	@Inject(method = "insert(Lnet/fabricmc/fabric/api/transfer/v1/item/ItemVariant;JLnet/fabricmc/fabric/api/transfer/v1/transaction/TransactionContext;)J", at = @At("HEAD"), cancellable = true, remap = false)
 	private void countOnInsert(ItemVariant insertedVariant, long maxAmount, TransactionContext transaction, CallbackInfoReturnable<Long> cir) {
 		if (CarpetSettings.hopperCounters && CarpetCreateSettings.expandedHopperCounters) {
 			Level level = this.blockEntity.getLevel();

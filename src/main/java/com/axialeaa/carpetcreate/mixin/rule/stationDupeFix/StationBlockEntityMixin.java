@@ -22,7 +22,7 @@ public abstract class StationBlockEntityMixin extends SmartBlockEntity {
 		super(type, pos, state);
 	}
 
-	@Inject(method = "enterAssemblyMode", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;setValue(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;", shift = At.Shift.BEFORE), cancellable = true)
+	@Inject(method = "enterAssemblyMode", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;setValue(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Ljava/lang/Object;", shift = At.Shift.BEFORE), cancellable = true, remap = false)
 	private void checkStationBeforeAssembly(ServerPlayer sender, CallbackInfoReturnable<Boolean> cir) {
 		if (level != null && CarpetCreateSettings.stationDupeFix && !(level.getBlockState(worldPosition).getBlock() instanceof StationBlock))
 			cir.setReturnValue(true);

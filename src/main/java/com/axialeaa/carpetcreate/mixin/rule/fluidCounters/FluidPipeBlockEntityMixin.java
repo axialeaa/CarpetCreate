@@ -21,7 +21,7 @@ public class FluidPipeBlockEntityMixin {
 
 	@Shadow @Final FluidPipeBlockEntity this$0;
 
-	@ModifyReturnValue(method = "canHaveFlowToward", at = @At("RETURN"))
+	@ModifyReturnValue(method = "canHaveFlowToward", at = @At("RETURN"), remap = false)
 	private boolean test(boolean original, BlockState state, Direction direction) {
 		boolean bl = false;
 		Level level = this.this$0.getLevel();

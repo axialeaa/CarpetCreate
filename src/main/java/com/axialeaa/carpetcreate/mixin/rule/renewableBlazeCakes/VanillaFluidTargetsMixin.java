@@ -20,14 +20,14 @@ import net.minecraft.world.level.material.Fluids;
 @Mixin(VanillaFluidTargets.class)
 public class VanillaFluidTargetsMixin {
 
-	@Inject(method = "shouldPipesConnectTo", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "shouldPipesConnectTo", at = @At("HEAD"), cancellable = true, remap = false)
 	private static void shouldPipesConnectTo$carpetcreate(BlockState state, CallbackInfoReturnable<Boolean> cir) {
 		if (CarpetCreateSettings.renewableBlazeCakes && (state.is(Blocks.MAGMA_BLOCK) || state.is(Blocks.NETHERRACK)))
 			cir.setReturnValue(true);
 	}
 
 	@SuppressWarnings("UnstableApiUsage")
-	@Inject(method = "drainBlock", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "drainBlock", at = @At("HEAD"), cancellable = true, remap = false)
 	private static void drainBlock$carpetcreate(Level level, BlockPos pos, BlockState state, TransactionContext ctx, CallbackInfoReturnable<FluidStack> cir) {
 		if (CarpetCreateSettings.renewableBlazeCakes && state.getBlock() == Blocks.MAGMA_BLOCK) {
 			level.updateSnapshots(ctx);

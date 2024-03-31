@@ -10,7 +10,7 @@ import com.simibubi.create.content.logistics.chute.ChuteBlockEntity;
 @Mixin(ChuteBlockEntity.class)
 public class ChuteBlockEntityMixin {
 
-	@ModifyReturnValue(method = "getExtractionAmount", at = @At("RETURN"))
+	@ModifyReturnValue(method = "getExtractionAmount", at = @At("RETURN"), remap = false)
 	private int modifyExtractionAmount(int original) {
 		return CarpetCreateSettings.chuteExtractAmount;
 	}

@@ -10,7 +10,7 @@ import com.simibubi.create.content.logistics.funnel.FunnelBlockEntity;
 @Mixin(FunnelBlockEntity.class)
 public class FunnelBlockEntityMixin {
 
-	@ModifyConstant(method = "getAmountToExtract", constant = @Constant(intValue = 1))
+	@ModifyConstant(method = "getAmountToExtract", constant = @Constant(intValue = 1), remap = false)
 	private int modifyFunnelAmount(int constant) {
 		return CarpetCreateSettings.andesiteFunnelExtractAmount;
 	}

@@ -4,7 +4,6 @@
   "package": "com.axialeaa.carpetcreate.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "rule.creativePersistentGoggleOverlay.GoggleOverlayRendererMixin",
     "rule.deployerPlacementFix.DeployerHandlerMixin",
     "rule.entitiesRotateWithContraptions.OrientedContraptionEntityMixin",
     "rule.expandedHopperCounters.AbstractFunnelBlockMixin",
@@ -16,21 +15,20 @@
     "rule.flowingBottomlessFluidFix.FluidManipulationBehaviourMixin",
     "rule.fluidCounters.FluidPipeBlockEntityMixin",
     "rule.fluidCounters.FluidTransportBehaviourMixin",
-    "rule.obedientTickFreeze.AnimationTickHolderMixin",
-    "rule.obedientTickFreeze.LinkedControllerItemRendererMixin",
-    "rule.obedientTickFreeze.ScrollValueHandlerMixin",
-    "rule.obedientTickFreeze.ServerSpeedProviderMixin",
-    "rule.obedientTickFreeze.TurntableHandlerMixin",
     "rule.renewableBlazeCakes.VanillaFluidTargetsMixin",
     "rule.respectRespectData.ListFilterItemStackMixin",
     "rule.stationDupeFix.StationBlockEntityMixin",
-    "rule.suppressSpawnDataLogError.PortingLibEntityClientMixin",
     "rule.toolboxItemDupeFix.DropperMovementBehaviourMixin"
+  ],
+  "client": [
+    "rule.creativePersistentGoggleOverlay.GoggleOverlayRendererMixin",
+    "rule.tickFreezePausesAnimations._TickFreezePausesAnimationsMultiMixin",
+    "rule.tickFreezePausesAnimations.AnimationTickHolderWildcardMixin",
+    "rule.tickFreezePausesAnimations.ServerSpeedProviderMixin",
+    "rule.tickFreezePausesAnimations.TurntableHandlerMixin",
+    "rule.suppressSpawnDataLogError.PortingLibEntityClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "client": [
-    "rule.obedientTickFreeze.ContraptionRenderDispatcherMixin"
-  ]
+  }
 }

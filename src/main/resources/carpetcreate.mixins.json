@@ -1,0 +1,36 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.axialeaa.carpetcreate.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "rule.creativePersistentGoggleOverlay.GoggleOverlayRendererMixin",
+    "rule.deployerPlacementFix.DeployerHandlerMixin",
+    "rule.entitiesRotateWithContraptions.OrientedContraptionEntityMixin",
+    "rule.expandedHopperCounters.AbstractFunnelBlockMixin",
+    "rule.expandedHopperCounters.ChuteItemHandlerMixin",
+    "rule.expandedHopperCounters.GroupedItemsAccessor",
+    "rule.expandedHopperCounters.MechanicalCrafterBlockEntityMixin",
+    "rule.extractAmount.ChuteBlockEntityMixin",
+    "rule.extractAmount.FunnelBlockEntityMixin",
+    "rule.flowingBottomlessFluidFix.FluidManipulationBehaviourMixin",
+    "rule.fluidCounters.FluidPipeBlockEntityMixin",
+    "rule.fluidCounters.FluidTransportBehaviourMixin",
+    "rule.obedientTickFreeze.AnimationTickHolderMixin",
+    "rule.obedientTickFreeze.LinkedControllerItemRendererMixin",
+    "rule.obedientTickFreeze.ScrollValueHandlerMixin",
+    "rule.obedientTickFreeze.ServerSpeedProviderMixin",
+    "rule.obedientTickFreeze.TurntableHandlerMixin",
+    "rule.renewableBlazeCakes.VanillaFluidTargetsMixin",
+    "rule.respectRespectData.ListFilterItemStackMixin",
+    "rule.stationDupeFix.StationBlockEntityMixin",
+    "rule.suppressSpawnDataLogError.PortingLibEntityClientMixin",
+    "rule.toolboxItemDupeFix.DropperMovementBehaviourMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "rule.obedientTickFreeze.ContraptionRenderDispatcherMixin"
+  ]
+}

@@ -3,13 +3,7 @@ package com.axialeaa.carpetcreate;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.utils.Translations;
-import com.axialeaa.carpetcreate.command.FluidCounterCommand;
-import com.mojang.brigadier.CommandDispatcher;
-import com.simibubi.create.Create;
-import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.commands.CommandBuildContext;
-import net.minecraft.commands.CommandSourceStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,12 +17,7 @@ public class CarpetCreateServer implements ModInitializer, CarpetExtension {
 	@Override
 	public void onInitialize() {
 		CarpetServer.manageExtension(new CarpetCreateServer());
-
-		LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", MOD_NAME, Create.VERSION);
-		LOGGER.info(EnvExecutor.unsafeRunForDist(
-				() -> () -> "{} is accessing Porting Lib from the client!",
-				() -> () -> "{} is accessing Porting Lib from the server!"
-		), MOD_NAME);
+		LOGGER.info(MOD_NAME + " initialized. Create con-carpet contraptions!");
 	}
 
 	@Override
@@ -36,10 +25,10 @@ public class CarpetCreateServer implements ModInitializer, CarpetExtension {
 		CarpetServer.settingsManager.parseSettingsClass(CarpetCreateSettings.class);
 	}
 
-	@Override
-	public void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext commandBuildContext) {
-		FluidCounterCommand.register(dispatcher);
-	}
+//	@Override
+//	public void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext commandBuildContext) {
+//		FluidCounterCommand.register(dispatcher);
+//	}
 
 	@Override
 	public Map<String, String> canHasTranslations(String lang) {

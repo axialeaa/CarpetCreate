@@ -1,24 +1,12 @@
 package com.axialeaa.carpetcreate.mixin.rule.expandedHopperCounters;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
+import carpet.CarpetSettings;
+import carpet.helpers.HopperCounter;
+import carpet.utils.WoolTool;
 import com.axialeaa.carpetcreate.CarpetCreateSettings;
 import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlockEntity;
 import com.simibubi.create.content.kinetics.crafter.RecipeGridHandler;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
-
-import carpet.CarpetSettings;
-import carpet.helpers.HopperCounter;
-import carpet.utils.WoolTool;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.DyeColor;
@@ -26,12 +14,22 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import org.apache.commons.lang3.tuple.Pair;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Mixin(MechanicalCrafterBlockEntity.class)
 public abstract class MechanicalCrafterBlockEntityMixin extends SmartBlockEntity {
 
-	@Shadow public abstract Direction getTargetDirection();
-	@Shadow protected RecipeGridHandler.GroupedItems groupedItems;
+	@Shadow(remap = false) public abstract Direction getTargetDirection();
+	@Shadow(remap = false) protected RecipeGridHandler.GroupedItems groupedItems;
 
 	public MechanicalCrafterBlockEntityMixin(BlockEntityType<?> type, BlockPos pos, BlockState state) {
 		super(type, pos, state);

@@ -16,10 +16,10 @@ public class CarpetCreateSettings {
 
 	/**<h1>RULES</h1>*/
 
-	@Rule( options = "1", strict = false, categories = { FEATURE, CREATE }, validators = Validators.NonNegativeNumber.class )
+	@Rule( options = "1", strict = false, validators = Validators.NonNegativeNumber.class, categories = { FEATURE, CREATE } )
 	public static int andesiteFunnelExtractAmount = 1;
 
-	@Rule( options = "16", strict = false, categories = { FEATURE, CREATE }, validators = Validators.NonNegativeNumber.class )
+	@Rule( options = "16", strict = false, validators = Validators.NonNegativeNumber.class, categories = { FEATURE, CREATE } )
 	public static int chuteExtractAmount = 16;
 
 	@Rule( categories = { CREATIVE, CREATE, CLIENT } )
@@ -28,8 +28,8 @@ public class CarpetCreateSettings {
 	@Rule( categories = { BUGFIX, CREATE } )
 	public static boolean deployerPlacementFix = false;
 
-	@Rule( categories = { BUGFIX, CREATE } )
-	public static boolean entityContraptionRotationFix = false;
+//	@Rule( categories = { BUGFIX, CREATE } )
+//	public static boolean entityContraptionRotationFix = false;
 
 	@Rule( categories = { CREATIVE, COMPAT, CREATE } )
 	public static boolean expandedHopperCounters = false;
@@ -37,8 +37,11 @@ public class CarpetCreateSettings {
 	@Rule( categories = { BUGFIX, CREATE } )
 	public static boolean flowingBottomlessFluidFix = false;
 
-	@Rule( categories = { COMMAND, CREATIVE, FEATURE, CREATE } )
-	public static boolean fluidCounters = false;
+//	@Rule( categories = { COMMAND, CREATIVE, FEATURE, CREATE } )
+//	public static boolean fluidCounters = false;
+
+	@Rule( options = { "0.5", "0.0", "1.0" }, strict = false, validators = Validators.Probablity.class, categories = { CREATIVE, SURVIVAL, CREATE } )
+	public static double mechanicalRollerDropChance = 0.5;
 
 	@Rule( categories = { FEATURE, CREATE } )
 	public static boolean renewableBlazeCakes = false;
@@ -52,8 +55,8 @@ public class CarpetCreateSettings {
 	@Rule( categories = { CREATE, PORTING_LIB, CLIENT } )
 	public static boolean suppressSpawnDataLogError = false;
 
-	@Rule( categories = { CREATIVE, CREATE, COMPAT, FLYWHEEL, CLIENT } )
-	public static boolean tickFreezePausesAnimations = false;
+	@Rule( categories = { CREATE, EXPERIMENTAL, COMPAT, FLYWHEEL, CLIENT } )
+	public static boolean tickSyncedCreateAnimations = false;
 
 	@Rule( categories = { BUGFIX, CREATE } )
 	public static boolean toolboxItemDupeFix = false;

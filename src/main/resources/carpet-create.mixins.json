@@ -15,6 +15,7 @@
     "rule.flowingBottomlessFluidFix.FluidManipulationBehaviourMixin",
     "rule.fluidCounters.FluidPipeBlockEntityMixin",
     "rule.fluidCounters.FluidTransportBehaviourMixin",
+    "rule.mechanicalRollerDropChance.RollerMovementBehaviourMixin",
     "rule.renewableBlazeCakes.VanillaFluidTargetsMixin",
     "rule.respectRespectData.ListFilterItemStackMixin",
     "rule.stationDupeFix.StationBlockEntityMixin",
@@ -22,11 +23,11 @@
   ],
   "client": [
     "rule.creativePersistentGoggleOverlay.GoggleOverlayRendererMixin",
-    "rule.tickFreezePausesAnimations._TickFreezePausesAnimationsMultiMixin",
-    "rule.tickFreezePausesAnimations.AnimationTickHolderWildcardMixin",
-    "rule.tickFreezePausesAnimations.ServerSpeedProviderMixin",
-    "rule.tickFreezePausesAnimations.TurntableHandlerMixin",
-    "rule.suppressSpawnDataLogError.PortingLibEntityClientMixin"
+    "rule.suppressSpawnDataLogError.PortingLibEntityClientMixin",
+    "rule.tickSyncedCreateAnimations._TickFreezeMultiMixin",
+    "rule.tickSyncedCreateAnimations.AnimationTickHolderWildcardMixin",
+    "rule.tickSyncedCreateAnimations.ServerSpeedProviderMixin",
+    "rule.tickSyncedCreateAnimations.TurntableHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

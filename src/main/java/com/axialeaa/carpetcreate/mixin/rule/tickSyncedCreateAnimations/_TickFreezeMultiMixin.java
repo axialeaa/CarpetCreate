@@ -1,6 +1,6 @@
-package com.axialeaa.carpetcreate.mixin.rule.tickFreezePausesAnimations;
+package com.axialeaa.carpetcreate.mixin.rule.tickSyncedCreateAnimations;
 
-import com.axialeaa.carpetcreate.helpers.TickFreezeHelper;
+import com.axialeaa.carpetcreate.helpers.TickSyncHelper;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.simibubi.create.content.contraptions.render.ContraptionRenderDispatcher;
@@ -18,11 +18,11 @@ import org.spongepowered.asm.mixin.injection.At;
 	LinkedControllerItemRenderer.class,
 	ScrollValueHandler.class
 })
-public class _TickFreezePausesAnimationsMultiMixin {
+public class _TickFreezeMultiMixin {
 
 	@WrapOperation(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;isPaused()Z"), remap = false)
 	private static boolean shouldPause(Minecraft instance, Operation<Boolean> original) {
-		return TickFreezeHelper.isPaused(instance);
+		return TickSyncHelper.isGamePaused();
 	}
 
 }

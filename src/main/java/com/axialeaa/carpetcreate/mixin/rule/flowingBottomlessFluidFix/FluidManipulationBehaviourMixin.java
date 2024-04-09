@@ -15,7 +15,7 @@ import java.util.Set;
 public class FluidManipulationBehaviourMixin {
 
 	@WrapWithCondition(method = "search", at = @At(value = "INVOKE", target = "Ljava/util/Set;add(Ljava/lang/Object;)Z"), remap = false)
-	private boolean test(Set<BlockPos> instance, Object e, @Local Level world, @Local BlockPos currentPos) {
+	private boolean shouldCountTowardsBody(Set<BlockPos> instance, Object e, @Local Level world, @Local BlockPos currentPos) {
 		return !CarpetCreateSettings.flowingBottomlessFluidFix || world.getFluidState(currentPos).isSource();
 	}
 

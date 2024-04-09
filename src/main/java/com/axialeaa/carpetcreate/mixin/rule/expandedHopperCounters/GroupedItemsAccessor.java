@@ -1,19 +1,17 @@
 package com.axialeaa.carpetcreate.mixin.rule.expandedHopperCounters;
 
-import java.util.Map;
-
+import com.simibubi.create.content.kinetics.crafter.RecipeGridHandler;
+import net.minecraft.world.item.ItemStack;
 import org.apache.commons.lang3.tuple.Pair;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-import com.simibubi.create.content.kinetics.crafter.RecipeGridHandler;
-
-import net.minecraft.world.item.ItemStack;
+import java.util.Map;
 
 @Mixin(RecipeGridHandler.GroupedItems.class)
 public interface GroupedItemsAccessor {
 
-	@Accessor("grid")
+	@Accessor(value = "grid", remap = false)
 	Map<Pair<Integer, Integer>, ItemStack> getGrid();
 
 }

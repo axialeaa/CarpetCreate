@@ -13,6 +13,7 @@
   "carpet.rule.flowingBottomlessFluidFix.desc": "Fixes flowing fluids being counted towards a \"bottomless\" body",
   "carpet.rule.flowingBottomlessFluidFix.extra.0": "Based on this pull request by IThundxr: https://github.com/Creators-of-Create/Create/pull/6036",
   "carpet.rule.fluidCounters.desc": "Fluid influx across a timespan can be measured using wool blocks",
+  "carpet.rule.mechanicalRollerDropChance.desc": "The chance of a mechanical roller dropping the block it breaks as an item",
   "carpet.rule.renewableBlazeCakes.desc": "Pipes can suck the lava out of magma blocks, converting them to netherrack",
   "carpet.rule.respectRespectData.desc": "Fixes the Respect Data button in list filters not actually respecting the items' datas",
   "carpet.rule.respectRespectData.extra.0": "Based on this pull request by voidLeech: https://github.com/Creators-of-Create/Create/pull/5971",
@@ -21,7 +22,8 @@
   "carpet.rule.stationDupeFix.extra.0": "Based on this pull request by cakeGit: https://github.com/Creators-of-Create/Create/pull/6088",
   "carpet.rule.suppressSpawnDataLogError.desc": "Suppresses the ExtraSpawnDataEntity spawn data error message, which is spammed every time an oscillating gantry carriage reverses direction",
   "carpet.rule.suppressSpawnDataLogError.extra.0": "This does not fix the underlying issue that causes the message. It just stops the message from showing in the client log.",
-  "carpet.rule.tickFreezePausesAnimations.desc": "Create contraption animations obey the tick freeze status of the world",
+  "carpet.rule.tickSyncedCreateAnimations.desc": "Create contraption animations obey the tick rate and freeze status of the world",
+  "carpet.rule.tickSyncedCreateAnimations.extra.0": "Note: this rule is still in active development. You should expect vanilla behavior for a handful of contraption actors.",
   "carpet.rule.toolboxItemDupeFix.desc": "Fixes droppers not respecting item NBT on moving contraptions when ejecting, allowing empty toolboxes to pair with pre-filled ones",
   "carpet.rule.toolboxItemDupeFix.extra.0": "Based on this pull request by IThundxr: https://github.com/Creators-of-Create/Create/pull/6062"
 }

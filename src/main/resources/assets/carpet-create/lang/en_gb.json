@@ -1,0 +1,4 @@
+{
+  "carpet.rule.expandedHopperCounters.desc": "Extends hopper counter behaviour to andesite funnels, brass funnels, chutes, smart chutes and mechanical crafters",
+  "carpet.rule.tickSyncedCreateAnimations.extra.0": "Note: this rule is still in active development. You should expect vanilla behaviour for a handful of contraption actors."
+}

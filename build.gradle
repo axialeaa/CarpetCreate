@@ -23,10 +23,10 @@ repositories {
 	maven { url = "https://masa.dy.fi/maven" } // Carpet
 
 	maven { url = "https://maven.shedaniel.me/" } // Cloth Config, REI
-	maven { url = "https://dvs1.progwml6.com/files/maven/" } // JEI
+	maven { url = "https://maven.blamejared.com/" } // JEI
+	maven { url = "https://modmaven.dev" } // JEI (Fallback)
 	maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
 	maven { url = "https://maven.quiltmc.org/repository/release" } // Quilt Mappings
-	maven { url = "https://api.modrinth.com/maven" } // LazyDFU
 	maven { url = "https://maven.terraformersmc.com/releases/" } // Mod Menu
 	maven { url = "https://mvn.devos.one/snapshots/" } // Create, Forge Tags, Milk Lib, Registrate
 	maven { url = "https://mvn.devos.one/releases" } // Porting Lib
@@ -47,13 +47,13 @@ dependencies {
 	modImplementation("net.fabricmc:fabric-loader:${loader_version}")
 
 	// dependencies
-	modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_version}")
+	// modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_version}")
 
 	// Create - dependencies are added transitively
 	modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_version}")
 
 	// Carpet
-	modImplementation "carpet:fabric-carpet:${project.carpet_version}"
+	modImplementation "carpet:fabric-carpet:${project.carpet_mc_version}-${project.carpet_version}"
 
 	// Development QOL
 	// modLocalRuntime("maven.modrinth:lazydfu:${lazydfu_version}")
@@ -62,7 +62,10 @@ dependencies {
 	// Recipe Viewers - Create Fabric supports JEI, REI, and EMI.
 	// See root gradle.properties to choose which to use at runtime.
 	switch (recipe_viewer.toLowerCase(Locale.ROOT)) {
-		case "jei": modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}"); break
+		case "jei": {
+			modLocalRuntime("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+			modLocalRuntime("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
+		}; break
 		case "rei": modLocalRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"); break
 		case "emi": modLocalRuntime("dev.emi:emi:${emi_version}"); break
 		case "disabled": break

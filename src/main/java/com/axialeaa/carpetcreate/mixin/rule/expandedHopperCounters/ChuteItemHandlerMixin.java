@@ -27,7 +27,7 @@ import java.util.Objects;
 @Mixin(ChuteItemHandler.class)
 public abstract class ChuteItemHandlerMixin extends SingleVariantStorage<ItemVariant> {
 
-	@Shadow private ChuteBlockEntity blockEntity;
+	@Shadow(remap = false) private ChuteBlockEntity blockEntity;
 
 	@Inject(method = "insert(Lnet/fabricmc/fabric/api/transfer/v1/item/ItemVariant;JLnet/fabricmc/fabric/api/transfer/v1/transaction/TransactionContext;)J", at = @At("HEAD"), cancellable = true, remap = false)
 	private void countOnInsert(ItemVariant insertedVariant, long maxAmount, TransactionContext transaction, CallbackInfoReturnable<Long> cir) {

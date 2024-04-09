@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 public class DeployerHandlerMixin {
 
 	@Inject(method = "shouldActivate", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getBlock()Lnet/minecraft/world/level/block/Block;", shift = At.Shift.BEFORE), cancellable = true, remap = false)
-	private static void test(ItemStack held, Level world, BlockPos targetPos, Direction facing, CallbackInfoReturnable<Boolean> cir) {
+	private static void checkReplaceable(ItemStack held, Level world, BlockPos targetPos, Direction facing, CallbackInfoReturnable<Boolean> cir) {
 		if (CarpetCreateSettings.deployerPlacementFix && !world.getBlockState(targetPos).canBeReplaced())
 			cir.setReturnValue(false);
 	}

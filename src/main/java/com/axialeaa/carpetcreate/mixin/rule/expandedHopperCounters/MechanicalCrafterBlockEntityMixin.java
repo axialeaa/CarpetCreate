@@ -53,11 +53,12 @@ public abstract class MechanicalCrafterBlockEntityMixin extends SmartBlockEntity
 				BlockPos blockPos = this.getBlockPos();
 				DyeColor dyeColor = WoolTool.getWoolColorAtPosition(level, blockPos.relative(this.getTargetDirection()));
 
-				if (dyeColor != null)
+				if (dyeColor != null) {
 					for (ItemStack itemStack : list) {
 						HopperCounter.getCounter(dyeColor).add(level.getServer(), itemStack);
 						itemStack.setCount(0);
 					}
+				}
 			}
 		}
 	}

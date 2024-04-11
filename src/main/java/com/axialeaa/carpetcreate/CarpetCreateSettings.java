@@ -1,7 +1,10 @@
 package com.axialeaa.carpetcreate;
 
+import carpet.api.settings.CarpetRule;
 import carpet.api.settings.Rule;
+import carpet.api.settings.Validator;
 import carpet.api.settings.Validators;
+import net.minecraft.commands.CommandSourceStack;
 
 import static carpet.api.settings.RuleCategory.*;
 
@@ -14,12 +17,28 @@ public class CarpetCreateSettings {
 	public static final String PORTING_LIB = "portinglib";
 	public static final String FLYWHEEL = "flywheel";
 
+	/**<h1>VALIDATORS</h1>*/
+
+	private static class ExtractAmountValidator extends Validator<Integer> {
+
+		@Override
+		public Integer validate(CommandSourceStack source, CarpetRule<Integer> currentRule, Integer newValue, String typedString) {
+			return (newValue >= 1 && newValue <= 64) ? newValue : null;
+		}
+
+		@Override
+		public String description() {
+			return "You must choose a value from 1 to 64";
+		}
+
+	}
+
 	/**<h1>RULES</h1>*/
 
-	@Rule( options = "1", strict = false, validators = Validators.NonNegativeNumber.class, categories = { FEATURE, CREATE } )
+	@Rule( options = "1", strict = false, validators = ExtractAmountValidator.class, categories = { FEATURE, CREATE } )
 	public static int andesiteFunnelExtractAmount = 1;
 
-	@Rule( options = "16", strict = false, validators = Validators.NonNegativeNumber.class, categories = { FEATURE, CREATE } )
+	@Rule( options = "16", strict = false, validators = ExtractAmountValidator.class, categories = { FEATURE, CREATE } )
 	public static int chuteExtractAmount = 16;
 
 	@Rule( categories = { CREATIVE, CREATE, CLIENT } )

@@ -17,11 +17,13 @@ public class TickSyncHelper {
      */
     public static boolean isGamePaused() {
         Minecraft mc = Minecraft.getInstance();
+
         if (CarpetCreateSettings.tickSyncedCreateAnimations) {
             TickRateManager trm = ((MinecraftServerInterface) CarpetServer.minecraft_server).getTickRateManager();
             if (trm != null)
                 return !trm.runsNormally() || mc.isPaused();
         }
+
         return mc.isPaused();
     }
 
@@ -39,6 +41,7 @@ public class TickSyncHelper {
      */
     private static float getTickRateFactor() {
         ServerTickRateManager trm = ((MinecraftServerInterface) CarpetServer.minecraft_server).getTickRateManager();
+
         if (trm != null) {
             OptionalDouble mspt = Arrays.stream(CarpetServer.minecraft_server.tickTimes).average();
             if (mspt.isPresent()) {
@@ -46,6 +49,7 @@ public class TickSyncHelper {
                 return tickRate / 20;
             }
         }
+
         return 1;
     }
 

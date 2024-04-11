@@ -24,10 +24,11 @@ import java.util.Objects;
 public abstract class AbstractFunnelBlockMixin {
 
 	@Shadow(remap = false) public static Direction getFunnelFacing(BlockState state) {
-		return null;
+		throw new AssertionError();
 	}
 
-	@Inject(method = "tryInsert", at = @At("HEAD"), cancellable = true, remap = false)
+	@SuppressWarnings("UnreachableCode")
+    @Inject(method = "tryInsert", at = @At("HEAD"), cancellable = true, remap = false)
 	private static void countOnInsert(Level worldIn, BlockPos pos, ItemStack toInsert, boolean simulate, CallbackInfoReturnable<ItemStack> cir) {
 		if (CarpetSettings.hopperCounters && CarpetCreateSettings.expandedHopperCounters) {
 			BlockState blockState = worldIn.getBlockState(pos);

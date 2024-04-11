@@ -1,5 +1,6 @@
 package com.axialeaa.carpetcreate.mixin.rule.renewableBlazeCakes;
 
+import net.minecraft.world.level.block.Block;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,17 +22,17 @@ import net.minecraft.world.level.material.Fluids;
 public class VanillaFluidTargetsMixin {
 
 	@Inject(method = "shouldPipesConnectTo", at = @At("HEAD"), cancellable = true, remap = false)
-	private static void shouldPipesConnectTo$carpetcreate(BlockState state, CallbackInfoReturnable<Boolean> cir) {
+	private static void shouldConnectToMagma(BlockState state, CallbackInfoReturnable<Boolean> cir) {
 		if (CarpetCreateSettings.renewableBlazeCakes && (state.is(Blocks.MAGMA_BLOCK) || state.is(Blocks.NETHERRACK)))
 			cir.setReturnValue(true);
 	}
 
 	@SuppressWarnings("UnstableApiUsage")
 	@Inject(method = "drainBlock", at = @At("HEAD"), cancellable = true, remap = false)
-	private static void drainBlock$carpetcreate(Level level, BlockPos pos, BlockState state, TransactionContext ctx, CallbackInfoReturnable<FluidStack> cir) {
+	private static void drainMagma(Level level, BlockPos pos, BlockState state, TransactionContext ctx, CallbackInfoReturnable<FluidStack> cir) {
 		if (CarpetCreateSettings.renewableBlazeCakes && state.getBlock() == Blocks.MAGMA_BLOCK) {
 			level.updateSnapshots(ctx);
-			level.setBlock(pos, Blocks.NETHERRACK.defaultBlockState(), 3);
+			level.setBlock(pos, Blocks.NETHERRACK.defaultBlockState(), Block.UPDATE_ALL);
 			cir.setReturnValue(new FluidStack(Fluids.LAVA, FluidConstants.BUCKET));
 		}
 	}

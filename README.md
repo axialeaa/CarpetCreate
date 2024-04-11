@@ -1,5 +1,5 @@
 # Hi there! Thanks for checking out CarpetCreate!
-<img align="right" img width="140" alt="CarpetCreate's Logo" src="src/main/resources/assets/carpetcreate/icon.png">
+<img align="right" img width="150" alt="CarpetCreate's Logo" src="src/main/resources/assets/carpetcreate/icon.png">
 
 [![GitHub downloads](https://img.shields.io/github/downloads/axialeaa/CarpetCreate/total?label=Github%20downloads&logo=github&style=for-the-badge)](https://github.com/axialeaa/CarpetCreate/releases)
 [![Modrinth downloads](https://img.shields.io/modrinth/dt/carpetcreate?label=Modrinth%20downloads&logo=modrinth&style=for-the-badge)](https://modrinth.com/mod/carpetcreate)

@@ -8,7 +8,7 @@
     "axialeaa"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/carpet-create",
+    "homepage": "https://modrinth.com/mod/carpetcreate",
     "sources": "https://github.com/axialeaa/CarpetCreate",
     "issues": "https://github.com/axialeaa/CarpetCreate/issues"
   },
@@ -30,7 +30,7 @@
       },
       "links": {
         "modmenu.github_releases": "https://github.com/axialeaa/CarpetCreate/releases",
-        "modmenu.modrinth": "https://modrinth.com/mod/carpet-create"
+        "modmenu.modrinth": "https://modrinth.com/mod/carpetcreate"
       }
     }
   },

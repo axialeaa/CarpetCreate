@@ -20,7 +20,7 @@
   "carpet.rule.respectRespectData.extra.1": "You will need to take and reinsert the list filter after modifying this rule.",
   "carpet.rule.stationDupeFix.desc": "Fixes stations getting broken when an intersecting train disassembles, while also replacing the block in the train",
   "carpet.rule.stationDupeFix.extra.0": "Based on this pull request by cakeGit: https://github.com/Creators-of-Create/Create/pull/6088",
-  "carpet.rule.suppressSpawnDataLogError.desc": "Suppresses the ExtraSpawnDataEntity spawn data error message, which is spammed every time an oscillating gantry carriage reverses direction",
+  "carpet.rule.suppressSpawnDataLogError.desc": "Suppresses the ExtraSpawnDataEntity spawn data error message, which is spammed every time a self-adhered oscillating gantry carriage reverses direction",
   "carpet.rule.suppressSpawnDataLogError.extra.0": "This does not fix the underlying issue that causes the message. It just stops the message from showing in the client log.",
   "carpet.rule.tickSyncedCreateAnimations.desc": "Create contraption animations obey the tick rate and freeze status of the world",
   "carpet.rule.tickSyncedCreateAnimations.extra.0": "Note: this rule is still in active development. You should expect vanilla behavior for a handful of contraption actors.",

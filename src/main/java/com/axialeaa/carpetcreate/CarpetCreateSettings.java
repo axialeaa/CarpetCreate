@@ -14,7 +14,7 @@ public class CarpetCreateSettings {
 
 	public static final String CREATE = "create";
 	public static final String COMPAT = "compat";
-	public static final String PORTING_LIB = "portinglib";
+	public static final String PORTING_LIB = "porting_lib";
 	public static final String FLYWHEEL = "flywheel";
 
 	/**<h1>VALIDATORS</h1>*/
@@ -35,10 +35,10 @@ public class CarpetCreateSettings {
 
 	/**<h1>RULES</h1>*/
 
-	@Rule( options = "1", strict = false, validators = ExtractAmountValidator.class, categories = { FEATURE, CREATE } )
+	@Rule( options = { "1", "16", "64" }, strict = false, validators = ExtractAmountValidator.class, categories = { FEATURE, CREATE } )
 	public static int andesiteFunnelExtractAmount = 1;
 
-	@Rule( options = "16", strict = false, validators = ExtractAmountValidator.class, categories = { FEATURE, CREATE } )
+	@Rule( options = { "16", "64" }, strict = false, validators = ExtractAmountValidator.class, categories = { FEATURE, CREATE } )
 	public static int chuteExtractAmount = 16;
 
 	@Rule( categories = { CREATIVE, CREATE, CLIENT } )
@@ -59,7 +59,7 @@ public class CarpetCreateSettings {
 //	@Rule( categories = { COMMAND, CREATIVE, FEATURE, CREATE } )
 //	public static boolean fluidCounters = false;
 
-	@Rule( options = { "0.5", "0.0", "1.0" }, strict = false, validators = Validators.Probablity.class, categories = { CREATIVE, SURVIVAL, CREATE } )
+	@Rule( options = { "0.0", "0.5", "1.0" }, strict = false, validators = Validators.Probablity.class, categories = { CREATIVE, SURVIVAL, CREATE } )
 	public static double mechanicalRollerDropChance = 0.5;
 
 	@Rule( categories = { FEATURE, CREATE } )

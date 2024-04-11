@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 
 public class CarpetCreateServer implements ModInitializer, CarpetExtension {
-	public static final String MOD_ID = "carpet-create";
+	public static final String MOD_ID = "carpetcreate";
 	public static final String MOD_NAME = "CarpetCreate";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 

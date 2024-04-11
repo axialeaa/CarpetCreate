@@ -1,34 +1,20 @@
-# Create Fabric Addon Template
+# Hi there! Thanks for checking out CarpetCreate!
+<img align="right" img width="150" alt="CarpetCreate's Logo" src="src/main/resources/assets/carpetcreate/icon.png">
 
-This template mod comes pre-configured for developing an addon mod for Create on Fabric.
+[![GitHub downloads](https://img.shields.io/github/downloads/axialeaa/CarpetCreate/total?label=Github%20downloads&logo=github&style=for-the-badge)](https://github.com/axialeaa/CarpetCreate/releases)
+[![Modrinth downloads](https://img.shields.io/modrinth/dt/carpetcreate?label=Modrinth%20downloads&logo=modrinth&style=for-the-badge)](https://modrinth.com/mod/carpetcreate)
 
+<strong>CarpetCreate</strong> is an extension for both [Carpet](https://github.com/gnembon/fabric-carpet) and [Create](https://github.com/Fabricators-of-Create/Create), integrating the two seamlessly into an all-around clockwork technical experience! Besides the ability to modify the behaviours of Create's components to better suit a building environment, <strong>CarpetCreate</strong> offers many bug fixes and enhancements to the existing features, making your playthrough as smooth as it can possibly be!
 
-## Setup
+![](https://github.com/axialeaa/CarpetCreate/assets/116074698/5ece0d7f-302e-4435-81d0-abb29f8cabe5)
+> A fluid pump extracting lava from a magma block.
 
-This template is an extension of the base [Fabric Example Mod](https://github.com/FabricMC/fabric-example-mod).
-Setup is mostly the same.
+For more information and a list of rules, please check out the [CarpetCreate wiki](https://github.com/axialeaa/CarpetCreate/wiki). It has truly all you need to know!
+***
 
-Additionally, set `recipe_viewer` in [gradle.properties](gradle.properties). Remember to remove unused
-example code. Make sure versions are up-to-date.
+### Getting Started
+Once you have downloaded [Carpet](https://github.com/gnembon/fabric-carpet) and [Create](https://github.com/Fabricators-of-Create/Create), simply drag Carpet, Create (along with its own dependencies) and <strong>CarpetCreate</strong> into your Fabric mods folder. If you're playing on a multiplayer server, you'll need to have these mods installed on both the server and client sides.
+***
 
-When you publish your mod, you should use jars provided by GitHub Actions. These jars will have
-build number metadata and will be compressed by the Machete plugin.
-
-## Features
-- Access to Create and all of its dependencies
-- Mojang Mappings base, with Quilt Mappings and Parchment providing Javadoc and parameters
-- QuiltFlower decompiler for high quality Minecraft sources: `gradlew genSourcesWithQuiltflower`
-- GitHub Actions automatic build workflow
-- Machete Gradle plugin to shrink jar file sizes
-- Developer QOL: Mod Menu, LazyDFU, recipe viewers
-
-## Other Templates
-- [Multi-loader template](https://github.com/Fabricators-of-Create/create-multiloader-addon-template)
-- [Forge-only template](https://github.com/kotakotik22/CreateAddonTemplate)
-
-## Help
-Questions? Join us in the #devchat channel of the [Create Discord](https://discord.com/invite/hmaD7Se).
-
-## License
-
-This template is available under the CC0 license. Feel free to do as you wish with it.
+### More Carpet Extensions
+There are a lot of other Carpet extensions out there, adding countless new rules and functionality! You can find a list of them in the [Carpet wiki](https://github.com/gnembon/fabric-carpet/wiki/List-of-Carpet-extensions).

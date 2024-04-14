@@ -16,7 +16,7 @@ import net.minecraft.world.entity.player.Player;
 @Mixin(GoggleOverlayRenderer.class)
 public class GoggleOverlayRendererMixin {
 
-	@WrapOperation(method = "renderOverlay", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/equipment/goggles/GogglesItem;isWearingGoggles(Lnet/minecraft/world/entity/player/Player;)Z"), remap = false)
+	@WrapOperation(method = "renderOverlay", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/equipment/goggles/GogglesItem;isWearingGoggles(Lnet/minecraft/world/entity/player/Player;)Z"))
 	private static boolean shouldRenderOverlay(Player predicate, Operation<Boolean> original) {
 		return original.call(predicate) || (CarpetCreateSettings.creativePersistentGoggleOverlay && (predicate.isCreative() || predicate.isSpectator()));
 	}

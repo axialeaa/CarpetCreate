@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.At;
 })
 public class AnimationTickHolderWildcardMixin {
 
-	@WrapOperation(method = { "tick", "getPartialTicks()F" }, at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;isPaused()Z"), remap = false)
+	@WrapOperation(method = { "tick", "getPartialTicks()F" }, at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;isPaused()Z"))
 	private static boolean shouldPause(Minecraft instance, Operation<Boolean> original) {
 		return TickSyncHelper.isGamePaused();
 	}

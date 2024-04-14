@@ -28,7 +28,7 @@ public abstract class AbstractFunnelBlockMixin {
 	}
 
 	@SuppressWarnings("UnreachableCode")
-    @Inject(method = "tryInsert", at = @At("HEAD"), cancellable = true, remap = false)
+    @Inject(method = "tryInsert", at = @At("HEAD"), cancellable = true)
 	private static void countOnInsert(Level worldIn, BlockPos pos, ItemStack toInsert, boolean simulate, CallbackInfoReturnable<ItemStack> cir) {
 		if (CarpetSettings.hopperCounters && CarpetCreateSettings.expandedHopperCounters) {
 			BlockState blockState = worldIn.getBlockState(pos);

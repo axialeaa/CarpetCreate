@@ -62,6 +62,9 @@ public class CarpetCreateSettings {
 	@Rule( options = { "0.0", "0.5", "1.0" }, strict = false, validators = Validators.Probablity.class, categories = { CREATIVE, SURVIVAL, CREATE } )
 	public static double mechanicalRollerDropChance = 0.5;
 
+	@Rule( categories = { BUGFIX, COMPAT, CREATE } )
+	public static boolean ploughLayerBlockDropFix = false;
+
 	@Rule( categories = { FEATURE, CREATE } )
 	public static boolean renewableBlazeCakes = false;
 

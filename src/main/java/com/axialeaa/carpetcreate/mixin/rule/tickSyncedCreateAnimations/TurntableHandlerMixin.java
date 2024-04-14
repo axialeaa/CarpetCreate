@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(TurntableHandler.class)
 public class TurntableHandlerMixin {
 
-	@WrapOperation(method = "gameRenderTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;isPaused()Z"), remap = false)
+	@WrapOperation(method = "gameRenderTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;isPaused()Z"))
 	private static boolean shouldPause(Minecraft instance, Operation<Boolean> original) {
 		return TickSyncHelper.isGamePaused();
 	}

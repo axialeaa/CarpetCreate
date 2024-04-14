@@ -14,6 +14,7 @@
   "carpet.rule.flowingBottomlessFluidFix.extra.0": "Based on this pull request by IThundxr: https://github.com/Creators-of-Create/Create/pull/6036",
   "carpet.rule.fluidCounters.desc": "Fluid influx across a timespan can be measured using wool blocks",
   "carpet.rule.mechanicalRollerDropChance.desc": "The chance of a mechanical roller dropping the block it breaks as an item",
+  "carpet.rule.ploughLayerBlockDropFix.desc": "Fixes mechanical ploughs failing to drop modded SnowLayerBlock instances as items",
   "carpet.rule.renewableBlazeCakes.desc": "Pipes can suck the lava out of magma blocks, converting them to netherrack",
   "carpet.rule.respectRespectData.desc": "Fixes the Respect Data button in list filters not actually respecting the items' datas",
   "carpet.rule.respectRespectData.extra.0": "Based on this pull request by voidLeech: https://github.com/Creators-of-Create/Create/pull/5971",
